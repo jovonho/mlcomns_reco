@@ -3,11 +3,25 @@
 This repository is copied from the [MLCommons Training Recommendation workload](https://github.com/mlcommons/training/tree/master/recommendation/pytorch). 
 I have added scripts to easily start training in the docker container and simply start the container interactively. 
 
+-------------------------
+You should not have to modify this code - especially the model code.
+-------------------------
+-------------------------
+
 The `run_and_time.sh` script is the entry point to launch the benchmark. 
 
 `start_training.sh` simply launches the above script within the container. I use this script as the latching on point for the traces.
 
 You can find the preprocessed dataset for this workload on the server under `/raid/data/reco`.
+
+If you want to modify the code for fun/experimentation, you'll have to rebuild the docker image before your changes can take effect. As this is a benchmark, you should always trace the original version and not your custom version. Consequently, *please don't overwrite the normal image*.
+
+Rebuild the image by running 
+```
+sudo docker build -t <your-image-name> .
+```
+Then replace the image that is used in the `start_training.sh` and `start_container.sh` scripts.
+
 
 # Original README 
 
