@@ -1,3 +1,16 @@
+# Recommendation workload
+
+This repository is copied from the [MLCommons Training Recommendation workload](https://github.com/mlcommons/training/tree/master/recommendation/pytorch). 
+I have added scripts to easily start training in the docker container and simply start the container interactively. 
+
+The `run_and_time.sh` script is the entry point to launch the benchmark. 
+
+`start_training.sh` simply launches the above script within the container. I use this script as the latching on point for the traces.
+
+You can find the preprocessed dataset for this workload on the server under `/raid/data/reco`.
+
+# Original README 
+
 # 1. Problem
 This task benchmarks recommendation with implicit feedback on the [MovieLens 20 Million (ml-20m) dataset](https://grouplens.org/datasets/movielens/20m/) with a [Neural Collaborative Filtering](http://dl.acm.org/citation.cfm?id=3052569) model.
 The model trains on binary information about whether or not a user interacted with a specific item.
